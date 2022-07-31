@@ -9,37 +9,25 @@ const readFile = (pathToFile) => {
 };
 
 const genDiff = (pathToFile1, pathToFile2) => {
-  const contentFile1 = readFile(pathToFile1);
-  const contentFile2 = readFile(pathToFile2);
+  const file1 = readFile(pathToFile1);
+  const file2 = readFile(pathToFile2);
 
-  const keys1 = Object.keys(contentFile1);
-  const keys2 = Object.keys(contentFile2);
+  const keys = Object.keys({ ...file1, ...file2 }).sort();
 
-  const uniqeKeys = _.sortBy(_.uniq([...keys1, ...keys2]));
-
-  const result = uniqeKeys.reduce((acc, key) => {
-    const firstValue = contentFile1[key];
-    const secondValue = contentFile2[key];
-
-    if (firstValue === secondValue) {
-      acc += `    ${key}: ${secondValue}\n`;
-      return acc;
+  const getDistinction = keys.map((key) => {
+    if (!_.has(file2, key)) {
+      return `- ${key}: ${file1[key]}`;
     }
-    if (firstValue === undefined) {
-      acc += `  + ${key}: ${secondValue}\n`;
-      return acc;
+    if (!_.has(file1, key)) {
+      return `+ ${key}: ${file2[key]}`;
     }
-    if (secondValue === undefined) {
-      acc += `  - ${key}: ${firstValue}\n`;
-      return acc;
+    if (file1[key] === file2[key]) {
+      return `  ${key}: ${file1[key]}`;
     }
-    acc += `  - ${key}: ${firstValue}\n`;
-    acc += `  + ${key}: ${secondValue}\n`;
+    return `- ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`;
+  }).join('\n  ');
 
-    return acc;
-  }, '');
-
-  return `{\n${result}}`;
+  return `{\n  ${getDistinction}\n}`;
 };
 
 export default genDiff;
