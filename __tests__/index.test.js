@@ -1,18 +1,20 @@
-/* eslint-disable no-unused-vars */
+import { fileURLToPath } from 'url';
+import path from 'path';
+import fs from 'fs';
+
 import genDiff from '../src/index.js';
 
-const result = `{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
-}`;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-test('genDiff JSON', () => {
-  const filepath1 = './__fixtures__/file1.json';
-  const filepath2 = './__fixtures__/file2.json';
-  expect(true).toBe(true);
-  // expect(genDiff(filepath1, filepath2)).toEqual(result);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+
+test('genDiffJson', () => {
+  const expected = readFile('expectedFile.txt');
+  const filepath1 = getFixturePath('file1.json');
+  const filepath2 = getFixturePath('file2.json');
+  const actual = genDiff(filepath1, filepath2);
+
+  expect(actual).toEqual(expected);
 });
