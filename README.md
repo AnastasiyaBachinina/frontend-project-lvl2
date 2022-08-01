@@ -8,4 +8,4 @@
 <a href="https://codeclimate.com/github/AnastasiyaBachinina/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/292fe09f75639a3650f9/test_coverage" /></a>
 
 ### gendiff launch example with JSON: 
- [![asciicast](https://asciinema.org/a/1TDnzvbB0YeK6JgJ1ZhEH28TB.svg)](https://asciinema.org/a/1TDnzvbB0YeK6JgJ1ZhEH28TB)
+ [![asciicast](https://asciinema.org/a/aQoaLDFfC0lhyFfW36ktg17V6.svg)](https://asciinema.org/a/aQoaLDFfC0lhyFfW36ktg17V6)
