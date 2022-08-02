@@ -18,3 +18,12 @@ test('genDiffJson', () => {
 
   expect(actual).toEqual(expected);
 });
+
+test('genDiffYAML', () => {
+  const expected = readFile('expectedFile.txt');
+  const filepath1 = getFixturePath('file1.yml');
+  const filepath2 = getFixturePath('file2.yml');
+  const actual = genDiff(filepath1, filepath2);
+
+  expect(actual).toEqual(expected);
+});
