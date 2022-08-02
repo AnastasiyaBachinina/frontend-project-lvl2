@@ -9,3 +9,6 @@
 
 ### gendiff launch example with JSON: 
  [![asciicast](https://asciinema.org/a/aQoaLDFfC0lhyFfW36ktg17V6.svg)](https://asciinema.org/a/aQoaLDFfC0lhyFfW36ktg17V6)
+
+ ### gendiff launch example with YAML:
+ ![asciicast](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD.svg)](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD)
