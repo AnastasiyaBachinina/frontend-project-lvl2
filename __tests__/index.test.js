@@ -10,20 +10,29 @@ const __dirname = path.dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-test('genDiffJson', () => {
-  const expected = readFile('expectedFile.txt');
-  const filepath1 = getFixturePath('file1.json');
-  const filepath2 = getFixturePath('file2.json');
-  const actual = genDiff(filepath1, filepath2);
+const tests = [
+  {
+    filename1: 'file1.json', filename2: 'file2.json', output: 'expectedFileStylish.txt', formatName: 'stylish',
+  },
+  {
+    filename1: 'file1.yml', filename2: 'file2.yml', output: 'expectedFileStylish.txt', formatName: 'stylish',
+  },
+];
 
-  expect(actual).toEqual(expected);
+test.each(tests)('gendiff stylish tests', ({
+  filename1, filename2, output, formatName,
+}) => {
+  const filepath1 = getFixturePath(filename1);
+  const filepath2 = getFixturePath(filename2);
+  const expected = readFile(output);
+  const result = genDiff(filepath1, filepath2, formatName);
+  expect(result).toEqual(expected);
 });
 
-test('genDiffYAML', () => {
-  const expected = readFile('expectedFile.txt');
-  const filepath1 = getFixturePath('file1.yml');
-  const filepath2 = getFixturePath('file2.yml');
-  const actual = genDiff(filepath1, filepath2);
+test('Check wrong file extension', () => {
+  const error = new Error("Unknown format to parse: '.txt'!");
 
-  expect(actual).toEqual(expected);
+  expect(() => {
+    genDiff(getFixturePath('file1Wrong.txt'), getFixturePath('file2Wrong.txt'));
+  }).toThrow(error);
 });
