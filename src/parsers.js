@@ -1,6 +1,6 @@
 import { load } from 'js-yaml';
 
-const parse = (fileContent, formatName) => {
+const parse = (formatName, fileContent) => {
   switch (formatName) {
     case 'json':
       return JSON.parse(fileContent);
