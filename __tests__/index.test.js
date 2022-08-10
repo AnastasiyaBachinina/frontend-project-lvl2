@@ -28,11 +28,3 @@ test.each(tests)('gendiff stylish tests', ({
   const result = genDiff(filepath1, filepath2, formatName);
   expect(result).toEqual(expected);
 });
-
-test('Check wrong file extension', () => {
-  const error = new Error("Unknown format to parse: '.txt'!");
-
-  expect(() => {
-    genDiff(getFixturePath('file1Wrong.txt'), getFixturePath('file2Wrong.txt'));
-  }).toThrow(error);
-});
