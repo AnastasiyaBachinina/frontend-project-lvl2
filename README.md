@@ -11,8 +11,10 @@
  [![asciicast](https://asciinema.org/a/aQoaLDFfC0lhyFfW36ktg17V6.svg)](https://asciinema.org/a/aQoaLDFfC0lhyFfW36ktg17V6)
 
  ### gendiff launch example with YAML:
- ![asciicast](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD.svg)](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD)
+ [![asciicast](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD.svg)](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD)
 
  ### gendiff with nested files:
- ![asciicast](https://asciinema.org/a/CHSbbyHMvnt3wGku4Y5H74ZSH.svg)](https://asciinema.org/a/CHSbbyHMvnt3wGku4Y5H74ZSH)
- 
+ [![asciicast](https://asciinema.org/a/CHSbbyHMvnt3wGku4Y5H74ZSH.svg)](https://asciinema.org/a/CHSbbyHMvnt3wGku4Y5H74ZSH)
+
+### gendiff with plain format:
+ [![asciicast](https://asciinema.org/a/sH3MMMMrdgyeaJMOAA42NS8zw.svg)](https://asciinema.org/a/sH3MMMMrdgyeaJMOAA42NS8zw)
