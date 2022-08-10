@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
 import parseFile from './parsers.js';
-import format from './formatter/stylish.js';
+import format from './formatters/index.js';
 
 const buildTree = (data1, data2) => {
   const keys = Object.keys({ ...data1, ...data2 });
@@ -34,10 +34,10 @@ const extractFormat = (filename) => path.extname(filename).slice(1);
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const fileformat1 = extractFormat(filepath1);
   const fileformat2 = extractFormat(filepath2);
-  const fileContent1 = readFile(filepath1);
-  const fileContent2 = readFile(filepath2);
-  const data1 = parseFile(fileformat1, fileContent1);
-  const data2 = parseFile(fileformat2, fileContent2);
+  const dataContent1 = readFile(filepath1);
+  const dataContent2 = readFile(filepath2);
+  const data1 = parseFile(dataContent1, fileformat1);
+  const data2 = parseFile(dataContent2, fileformat2);
   const innerTree = buildTree(data1, data2);
   return format(innerTree, formatName);
 };
