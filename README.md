@@ -12,3 +12,7 @@
 
  ### gendiff launch example with YAML:
  ![asciicast](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD.svg)](https://asciinema.org/a/km9vD0IRF31K28mgoHworxWuD)
+
+ ### gendiff with nested files:
+ ![asciicast](https://asciinema.org/a/CHSbbyHMvnt3wGku4Y5H74ZSH.svg)](https://asciinema.org/a/CHSbbyHMvnt3wGku4Y5H74ZSH)
+ 
