@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-const space = (depth, spaceCount = 2) => ' '.repeat(spaceCount * depth);
-const stringify = (data, depth) => {
+const space = (depth, spaceCount = 4) => ' '.repeat(spaceCount * depth - 2);
+const stringify = (data, depth = 1) => {
   if (!_.isObject(data)) {
     return `${data}`;
   }
