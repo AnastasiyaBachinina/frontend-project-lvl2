@@ -17,9 +17,15 @@ const tests = [
   {
     filename1: 'file1.yml', filename2: 'file2.yml', output: 'expectedFileStylish.txt', formatName: 'stylish',
   },
+  {
+    filename1: 'file1.json', filename2: 'file2.json', output: 'expectedFilePlain.txt', formatName: 'plain',
+  },
+  {
+    filename1: 'file1.yml', filename2: 'file2.yml', output: 'expectedFilePlain.txt', formatName: 'plain',
+  },
 ];
 
-test.each(tests)('gendiff stylish tests', ({
+test.each(tests)('gendiff stylish and plain tests', ({
   filename1, filename2, output, formatName,
 }) => {
   const filepath1 = getFixturePath(filename1);
