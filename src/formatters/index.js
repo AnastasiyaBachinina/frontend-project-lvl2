@@ -9,6 +9,8 @@ const format = (tree, formatName) => {
     case 'plain': {
       return plain(tree);
     }
+    case 'json':
+      return JSON.stringify(tree, null, 4);
     default:
       throw new Error(`Unknown format to generate a tree: '${formatName}'!`);
   }
