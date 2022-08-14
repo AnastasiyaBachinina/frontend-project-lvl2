@@ -7,9 +7,9 @@
 
 <a href="https://codeclimate.com/github/AnastasiyaBachinina/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/292fe09f75639a3650f9/test_coverage" /></a>
 
-## GenDiff CLI util
+# GenDiff CLI util
 
-# Description: 
+## Description: 
  **Generator of differences** is the CLI programm that generate difference between two files. Supporting formats: JSON, YML, YAML.
 
 ## How to install:
